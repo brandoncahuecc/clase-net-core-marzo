@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clase07Escritorio.Administracion;
 using Clase07Escritorio.Cliente;
+using Clase07Escritorio.Objetos;
 
 namespace Clase07Escritorio
 {
     public partial class Inicio : Form
     {
+        public static List<Producto> Productos = new List<Producto>();
+
         public Inicio()
         {
             InitializeComponent();

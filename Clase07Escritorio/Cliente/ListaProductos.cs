@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clase07Escritorio.Objetos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace Clase07Escritorio.Cliente
         public ListaProductos()
         {
             InitializeComponent();
+            CargarProductos();
+        }
+
+        private void CargarProductos()
+        {
+            dgvProductosCliente.DataSource = null;
+            dgvProductosCliente.DataSource = Inicio.Productos.Select(item =>
+            new Producto {
+                Id = item.Id,
+                Nombre = item.Nombre,
+                Proveedor = item.Proveedor,
+                Cantidad = item.Cantidad,
+                PrecioUnidad  = item.PrecioUnidad + (item.PrecioUnidad * 0.05M)
+            }).ToList();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

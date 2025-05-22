@@ -26,8 +26,8 @@ namespace Clase07Escritorio.Administracion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string password = txtPassword.Text;
+            string usuario = txtUsuario.TextButton;
+            string password = txtPassword.TextButton;
 
             if (usuario == "Brandon" && password == "Abcd1234")
             {
